@@ -2,18 +2,22 @@
 <head>
   <title>The world's best chat app!</title>
   <script src="http://code.jquery.com/jquery-2.1.1.js" type="text/javascript"></script>
-  <script type="text/javascript" src="/javascripts/chat.js"></script>
-  <script type="text/javascript" src="/javascripts/chat_ui.js"></script>
+  <script src="/socket.io/socket.io.js"></script>
+  <script type="text/javascript" src="javascripts/chat.js"></script>
+  <script type="text/javascript" src="javascripts/chat_ui.js"></script>
+  
 </head>
 <body>
 <h1>The world's best chat app!</h1>
 Messages: <div id="incoming">
-  <ul><li><i>Nothing yet.</i></li></ul>
+  <ul id="group-messages">
+    <li><i>Nothing yet.</i></li>
+  </ul>
 </div>
 Say something!
 <form>
   <textarea id="outgoing"></textarea>
-  <button>Say it!</button>
+  <button id="message-submit">Say it!</button>
 </form>
 </body>
 </html>
