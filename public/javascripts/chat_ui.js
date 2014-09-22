@@ -17,7 +17,12 @@ $(document).ready(function(){
   $("#message-submit").on("click", function(event) {
     event.preventDefault();
     var message = getMessage(event);
-    chat.sendMessage(message);
+    var commandRegex = /\//;
+    if (commandRegex.exec(message)) {
+      chat.processCommand(message)
+    } else {
+      chat.sendMessage(message);
+    }
     $("#outgoing").val("");
   })
 });
