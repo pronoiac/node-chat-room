@@ -8,8 +8,7 @@ function getMessage(event) {
 
 function updateGroupMessage(message) {
   var $li = $("<li>");
-  
-  $li.text(message.text);
+  $li.text(message.user + ": " + message.text);
   $("#group-messages").append($li);
 }
 
