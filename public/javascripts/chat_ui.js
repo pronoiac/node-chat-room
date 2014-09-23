@@ -7,9 +7,19 @@ function getMessage(event) {
 };
 
 function updateGroupMessage(message) {
+  console.log(message);
   var $li = $("<li>");
   $li.text(message.user + ": " + message.text);
   $("#group-messages").append($li);
+}
+
+function postCurrentStatus(response) {
+  var $li1 = $("<li>");
+  $li1.text("You are now in: " + response.currentRoom);
+  $("#group-messages").append($li1);
+  var $li2 = $("<li>");
+  $li2.text(response.message);
+  $("#group-messages").append($li2);
 }
 
 $(document).ready(function(){
