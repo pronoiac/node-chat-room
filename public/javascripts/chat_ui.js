@@ -7,9 +7,8 @@ function getMessage(event) {
 };
 
 function updateGroupMessage(message) {
-  console.log(message);
   var $li = $("<li>");
-  $li.text(message.user + ": " + message.text);
+  $li.text(message.currentRoom + " | " + message.user + ": " + message.text);
   $("#group-messages").append($li);
 }
 
